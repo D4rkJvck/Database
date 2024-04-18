@@ -1,4 +1,4 @@
-package database
+package models
 
 var QUERY = `
 	CREATE TABLE IF NOT EXISTS users (
