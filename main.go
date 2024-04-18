@@ -2,6 +2,7 @@ package main
 
 import (
 	"database/sql"
+	"db/database"
 	"log"
 	"os"
 
@@ -21,8 +22,7 @@ func main() {
 	// Open Queries File
 	queries, err_sql := os.ReadFile("./database/tables.sql")
 	if err_sql != nil {
-		// TODO: SQL Queries Models
-		log.Fatalln("ERROR: Read File Failed:\n", err_sql)
+		queries = []byte(database.QUERY)
 	}
 
 	// Create Tables
